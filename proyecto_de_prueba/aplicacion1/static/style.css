@@ -1,0 +1,45 @@
+#logo {
+    padding-top: 50px;
+    width: 200px;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+#imagen {
+    float: left;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#formulario-beneficios {
+    padding: 50px;
+    color: white;
+    float: right;
+    width: 40%;
+}
+
+header, footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    clear: both; 
+    text-align: center;
+    color: white;
+}
+
+#fondo {
+
+    background-color: rgb(60, 23, 130);
+     
+}
+
+.lista_usuarios {
+
+    font-size: 20px;
+    padding: 30px;
+    color: white;
+    float: right;
+    width: 50%;
+
+}
