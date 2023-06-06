@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+
+Te lo Vendo - Usuarios
+
+{% endblock %}
+
+{% block imagen2 %}
+
+{% load static %}
+<img id="imagen" src="{% static 'img/usuarios.png' %}" alt="logo_fenix" width="500" height="500">
+
+{% endblock %}
+
+{% block formulario/lista %}
+
+<div class="lista_usuarios">
+    <h1>Lista de Usuarios Registrados</h1>
+    <p>
+        <ul>
+            {% for usuario in usuarios %}
+            <li>{{ usuario.nombre }} {{ usuario.apellido }}  |  {{ usuario.correo }}  |  {{ usuario.telefono }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+</div>
+
+{% endblock %}
