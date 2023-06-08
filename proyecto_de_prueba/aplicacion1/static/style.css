@@ -1,0 +1,45 @@
+#logo {
+    padding-top: 70px;
+    width: 100px;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+#imagen {
+    float: left;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#card_y_beneficios {
+    padding: 50px;
+    color: white;
+    float: right;
+    width: 60%;
+}
+
+header, footer {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    clear: both; 
+    text-align: center;
+    color: white;
+}
+
+#fondo {
+
+    background-color: rgb(72, 152, 218);
+     
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo con opacidad */
+    padding: 10px;
+    color: white;
+}
+
+.no-punto {
+    list-style-type: none;
+  }
