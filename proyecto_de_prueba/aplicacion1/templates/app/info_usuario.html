@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Te lo Vendo - Informacion
+
+{% endblock %}
+
+{% block imagen2 %}
+
+{% load static %}
+<img id="imagen" src="{% static 'img/fenix_logo.png' %}" alt="logo_fenix" width="500" height="500">
+
+{% endblock %}
+
+{% block formulario/lista %}
+
+<div class="container mb-5">
+    <div class="card ms-5" style="width: 30rem">
+        <div class="card-header text-center">
+            <h2>Perfil de Usuario</h2>
+        </div>
+        <div class="card-body text-center">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Actualizar Info</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

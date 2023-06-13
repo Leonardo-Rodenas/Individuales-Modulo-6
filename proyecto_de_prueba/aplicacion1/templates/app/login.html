@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Te lo Vendo - Login
+{% endblock %}
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        {% block imagen2 %}
+        {% load static %}
+        <img id="imagen" src="{% static 'img/login_image.png' %}" alt="logo_fenix" width="400" height="400"
+            class="me-5">
+        {% endblock %}
+
+        {% block formulario/lista %}
+        <div class="col card text-bg-light pt-4 pb-4 pl-3 shadow p-3 mb-5" style ="width: 500px">
+            <h4 class="card-tittle text-center mb-4">Inicio de sesión Te Lo Vendo</h4>
+            {% if error_message %}
+            <p>{{ error_message }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <p><label for="username">Usuario:</label></p>
+                            <p><label for="password">Contraseña:</label></p>
+                        </div>
+                        <div class="col text-start">
+                            <p><input type="text" id="username" name="username" required></p>
+                            <p><input type="password" id="password" name="password" required></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center mr-3">
+                    <input class="btn btn-primary" type="submit" value="Iniciar sesión">
+                </div>
+            </form>
+        </div>
+
+        {% endblock %}
