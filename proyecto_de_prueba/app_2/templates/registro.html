@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block formulario/lista%}
+<div class="containder-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="card mb-3 ms-5 me-1">
+                <div class="card m-5 border-0">
+                    <img class="img-responsive d-block d-sm-none"
+                        style="width: 50px;height: 50px;  margin-left: auto; margin-right: auto;"
+                        src=" {% static 'img/registro_usuario.png' %}" alt="img_registro">
+                    <h3 class="my-3 text-center fw-bold">Regístrate y se parte de TeloVendo</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <label for="username">Nombre de usuario:</label>
+                        <input type="text" id="username" name="username" class="form-control"
+                            placeholder="Nombre de Usuario" aria-label="Username" aria-describedby="basic-addon1"
+                            required>
+                        <br>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" class="form-control"
+                            placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1" required>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control"
+                            placeholder="Correo Electrónico" aria-label="Username" aria-describedby="basic-addon1"
+                            required>
+                        <br>
+                        <label for="first_name">Nombre:</label>
+                        <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Nombre"
+                            aria-label="Username" aria-describedby="basic-addon1" required>
+                        <br>
+                        <label for="last_name">Apellido:</label>
+                        <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Apellido"
+                            aria-label="Username" aria-describedby="basic-addon1" required>
+                        <br>
+                        <label for="grupo">Grupo de usuario:</label>
+                        <select class="form-select" id="grupo" name="grupo">
+                            {% for grupo in grupos %}
+                            <option value="{{ grupo.id }}">{{ grupo.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-outline-primary my-3" value="Registrar">
+                        </div>
+                    </form>
+                    {% if error %}
+                    <p>{{ error }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="card mb-3 ms-1 me-5 py-5 bg-transparent border-0">
+                <div class="card m-5 bg-transparent border-0">
+                    <img class="img-responsive d-none d-sm-block" style="margin-top: 70px; margin-bottom: 130px;"
+                        src=" {% static 'img/registro_usuario.png' %}" alt="img_registro">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
