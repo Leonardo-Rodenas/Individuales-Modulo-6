@@ -1,4 +1,4 @@
-# ABP - Trabajo Individual 5
+# ABP - Trabajo Individual 6
 
 ## Aplicación: "Telovendo" 
 
@@ -17,6 +17,19 @@ además de, una vez logueados, ingresar usuarios y ver la info entregada despleg
 - Vista de los últimos usuarios registrados: Visualización de usuarios registrados sin necesidad de
   utilizar el panel de control provisto por Django
 - Interfaz intuitiva, minimalista y fácil de usar.
+
+### Grupos de Permisos de Usuarios:
+
+Para revisar los permisos de usuarios es necesario entar a la pagina de administración de Django con las siguientes credenciales:
+
+- Usuario: leorodenas
+- Password: leo123465
+
+Los permisos están distribuidos bajos los siguientes grupos:
+
+- Vendedor: A este grupo perteneces los usuarios Peter y Miles, ambos catalogados como Activos y por tanto sin acceso al sitios de Aministración de Django. Ambos solo pueden añadir, cambiar y ver usuarios. La intención es restringuir en mayor medida su acceso al sitios para evitar que ambos "vendedores" puedan alterar las tablas extras que no necesiten.
+- Administrador: A este grupo pertenecen los usuarios Steve y Antony, ambos catalogados como parte del Staff y por tanto con acceso al sitio de Administración de Django. Los dos tienen todos los permisos otorgados a excepción de permisos relacionados a borrar entidades, registros o a manipular el log del proyecto. Además, ellos pueden ver los permisos, grupos y usuarios autorizados pero no modificarlos. La intención de estas privaciones es dejar la responsabilidad de borrado en la base de datos y de manipulación del Log como una Actividad exclusiva del SuperUser, además de restringir acceso a la tabla de autenticación y evitar que ambos se otorgen a si mismos un estatus más grande (subir a SuperUser). 
+- SuperUser: Sólo Leonardo pertenece a este grupo, el cual al tener el status de SuperUser tiene por defecto todos los permisos y por consiguiente no requiere estar en algun grupo en particular para obtenerlos (de hay que no aparezca este grupo en la entidad de grupos del panel de administración). Como superUser tiene poder absoluto para ver, modificar, crear y borrar en todas la entidades y registros.
 
 ### Restricciones
 
